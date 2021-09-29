@@ -8,11 +8,7 @@ const db = config.get("mongoURI");
 
 const connectDB = () => {
   mongoose
-    .connect(db, {
-      useNewUrlParser: true,
-      useCreateIndex: true,
-      useFindAndModify: false,
-    })
+    .connect(db)
     .then(() => console.log("MongoDB has connected"))
     .catch((err) => {
       console.error(err.message);
