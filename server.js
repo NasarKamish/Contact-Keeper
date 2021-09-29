@@ -9,9 +9,11 @@ const connectDB = require("./config/db.js");
 
 connectDB();
 
-// // // // // // DEFINE ROUTES // // // // // //
+// // // // // // DEFINE ROUTES && APP USES  // // // // // //
 
-app.use("/api/user", require("./routes/users"));
+app.use(express.json({ extended: false }));
+
+app.use("/api/users", require("./routes/users"));
 
 app.use("/api/auth", require("./routes/auth"));
 
